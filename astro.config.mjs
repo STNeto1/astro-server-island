@@ -4,11 +4,11 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "hybrid",
-  experimental: {
-    serverIslands: true,
-  },
-  adapter: netlify({
-    edgeMiddleware: true,
-  }),
+	output: "server",
+	experimental: {
+		serverIslands: true,
+	},
+	adapter: netlify({
+		edgeMiddleware: true,
+	}),
 });
