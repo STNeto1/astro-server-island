@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SomeComponent from "../components/SomeComponent.astro";
+---
+
+<Layout title="Welcome to Astro.">
+    <main>
+        <p>Some timestamps</p>
+        <SomeComponent server:defer />
+    </main>
+</Layout>
