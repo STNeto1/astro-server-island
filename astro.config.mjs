@@ -6,7 +6,9 @@ import netlify from "@astrojs/netlify";
 export default defineConfig({
   output: "hybrid",
   experimental: {
-    serverIslands: true
+    serverIslands: true,
   },
-  adapter: netlify()
+  adapter: netlify({
+    edgeMiddleware: true,
+  }),
 });
