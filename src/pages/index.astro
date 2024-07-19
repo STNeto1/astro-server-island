@@ -6,6 +6,6 @@ import SomeComponent from "../components/SomeComponent.astro";
 <Layout title="Welcome to Astro.">
     <main>
         <p>Some timestamps</p>
-        <SomeComponent server:defer />
+        <SomeComponent time={new Date().toISOString()} server:defer />
     </main>
 </Layout>

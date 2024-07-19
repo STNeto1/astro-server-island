@@ -1,17 +1,10 @@
 ---
-const timestamp = await new Promise<{ started: string; finished: string }>(
-    async (res) => {
-        const started = new Date().toISOString();
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        return res({
-            started,
-            finished: new Date().toISOString(),
-        });
-    },
-);
+const { time } = Astro.props;
+const date = new Date(time);
 ---
 
 <div>
-    <p>Started {timestamp.started}</p>
-    <p>Finished {timestamp.finished}</p>
+    <p>Started {date.toISOString()}</p>
+    <p>Finished {new Date().toISOString()}</p>
+    <p>Took {new Date().getTime() - date.getTime()}ms</p>
 </div>
